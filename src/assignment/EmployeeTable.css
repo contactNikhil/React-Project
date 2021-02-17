@@ -1,0 +1,101 @@
+table {
+  overflow-y: scroll;
+  height: 30px;
+}
+
+.empty__table {
+  color: rgba(46, 36, 36, 0.425);
+}
+
+.form {
+  background-color: white;
+  border: 1px solid #111;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+label {
+  text-align: right;
+  clear: both;
+  float: left;
+  margin-right: 15px;
+}
+.form__title {
+  text-decoration: underline;
+  font-weight: 700;
+  padding-bottom: 20px;
+}
+.idInput {
+  margin-left: 27px;
+}
+.salaryInput {
+  margin-left: 59px;
+}
+
+.submit__button {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 1px;
+  border-radius: 6px;
+}
+.remove__employee {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 1px;
+  border-radius: 6px;
+  box-shadow: brown;
+  color: brown;
+}
+
+.wrapper {
+  position: fixed;
+  top: 95%;
+  left: 85%;
+  transform: translate(-50%, -50%);
+}
+
+a {
+  display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all 0.35s;
+}
+
+a span {
+  position: relative;
+  z-index: 2;
+}
+
+a:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #ff003b;
+  transition: all 0.35s;
+}
+
+a:hover {
+  color: #fff;
+}
+
+a:hover:after {
+  width: 100%;
+}

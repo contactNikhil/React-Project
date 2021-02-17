@@ -1,0 +1,86 @@
+import React, { useState, useEffect } from 'react'
+import { Table, Dropdown } from 'react-bootstrap';
+import { Button, Modal } from 'react-bootstrap';
+import './EmployeeTable.css';
+function EmployeeTable() {
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const { register, handleSubmit, errors, watch, reset } = useForm();
+    const [employees, setEmployees] = useState([]);
+    const [employeeData, setEmployeeData] = useState('');
+    const [onEdit, setOnEdit] = useState(false)
+    const [employeeData, setEmployeeData] = useState([]);
+    useEffect(() => {
+        let eData = localStorage.getItem('employeeFormData');
+        eData = JSON.parse(eData);
+        setEmployeeData(eData)
+    })
+    const onSubmit = data => {
+        employees.push({ data });
+        localStorage.setItem('employeeFormData', JSON.stringify(employees));
+        let empData = localStorage.getItem('employeeFormData');
+        empData = JSON.parse(empData)
+        console.log(empData)
+        setEmployeeData(empData);
+        reset();
+    }
+    return (
+
+        < div >
+            <p> <b><u>Employee Live DataBase</u></b></p>
+            <Table striped bordered hover size="sm">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>User Name</th>
+                        <th>Contact Number</th>
+                        <th>Email </th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {employeeData?.length !== 0 ? employeeData?.map((employee, index) => {
+                        return <tr key={employee.data.employeeID} >
+                            {console.log(employee)}
+                            <td>{employee.data.employeeID}</td>
+                            <td>{employee.data.userName}</td>
+                            <td>{employee.data.contactNumber}</td>
+                            <td>{employee.data.emailID}</td>
+                            <td>{employee.data.salary}</td>
+                        </tr>
+                    })
+                        : <tr>
+
+                            <td colSpan="5" className="empty__table">No Employee Currently Added</td></tr>
+                    }
+                </tbody>
+            </Table>
+            <div>
+                <Button variant="primary" onClick={handleShow}>
+                    Launch demo modal
+      </Button>
+
+                <Modal show={show} onHide={handleClose}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Modal heading</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose}>
+                            Close
+          </Button>
+                        <Button variant="primary" onClick={handleClose}>
+                            Save Changes
+          </Button>
+                    </Modal.Footer>
+                </Modal>
+            </div>
+        </div >
+    )
+}
+
+export default EmployeeTable;
