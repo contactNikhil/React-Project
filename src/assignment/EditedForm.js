@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useForm } from 'react-hook-form';
 function Form(props) {
     const [targetEmployeeData, setTargetEmployeeData] = useState([])
@@ -13,15 +13,21 @@ function Form(props) {
         setValue("salary", targetData.salary)
         console.log(targetData)
     }, [setTargetEmployeeData])
+    useEffect(() => {
+        firstNameRef.current.focus();
+    }, [])
     const { register, handleSubmit, errors, setValue, reset } = useForm();
-
+    const firstNameRef = useRef();
     return (
         <div className="form">
             < form onSubmit={handleSubmit(props.onSubmit)} >
                 <div className="form__title" >Employee Data  </div>
                 <div className="form__ID">
                     <label htmlFor="employeeID">Employee ID</label>
-                    < input name="employeeID" className="idInput" ref={register({ required: true })} />
+                    < input name="employeeID" className="idInput" ref={(e) => {
+                        register(e)
+                        firstNameRef.current = e // you can still assign to ref
+                    }} />
                     {errors.employeeID && <span>This field is required</span>}
                 </div>
                 <div className="form__userName">

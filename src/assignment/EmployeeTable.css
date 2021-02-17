@@ -1,6 +1,7 @@
 table {
   overflow-y: scroll;
-  height: 30px;
+  height: 100%;
+  z-index: 2;
 }
 
 .empty__table {
@@ -60,7 +61,7 @@ label {
   transform: translate(-50%, -50%);
 }
 
-a {
+.employee__table a {
   display: block;
   width: 200px;
   height: 40px;
@@ -76,26 +77,32 @@ a {
   transition: all 0.35s;
 }
 
-a span {
+.employee__table a span {
   position: relative;
   z-index: 2;
 }
 
-a:after {
+.employee__table a:after {
   position: absolute;
   content: '';
   top: 0;
   left: 0;
+  text-decoration: black;
   width: 0;
   height: 100%;
-  background: #ff003b;
-  transition: all 0.35s;
+  background: rgb(214, 192, 223);
+  transition: all 9.9s;
 }
 
-a:hover {
-  color: #fff;
+.employee__table a:hover {
+  color: #000;
+  content: 'Brilworks';
 }
 
-a:hover:after {
+.employee__table a:hover:after {
   width: 100%;
+}
+
+.sideBar {
+  padding-bottom: 10px;
 }

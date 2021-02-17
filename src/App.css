@@ -1,6 +1,94 @@
+.right__sideNav {
+  background: url('https://www.google.com/search?q=employee+management+free+&tbm=isch&ved=2ahUKEwjivqyOiPHuAhWyQ30KHWRsDIgQ2-cCegQIABAA&oq=employee+management+free+&gs_lcp=CgNpbWcQAzIECCMQJzIECAAQGFD5Fli0HWDHIWgAcAB4AIABnAGIAfsGkgEDMC42mAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=Ox8tYKK1BLKH9QPk2LHACA&bih=722&biw=1536&rlz=1C1UEAD_enIN931IN932#imgrc=B4soU0Clb6QB2Mhttps://www.istockphoto.com/photo/building-a-strong-team-wooden-blocks-with-people-icon-on-pink-background-human-gm1227412970-361995295?utm_source=pixabay&utm_medium=affiliate&utm_campaign=SRP_image_sponsored&referrer_url=https%3A//pixabay.com/images/search/employees/&utm_term=employees')
+    rgb(157, 157, 253);
+
+  display: block;
+}
+.top__sideNav__text {
+  margin: 30px;
+}
 .App {
   text-align: center;
-  background-color: gray;
   height: 100%;
   width: 100%;
+  background: linear-gradient(-45deg, #e6886c, #e75c92, #3da3c9, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+html,
+body {
+  margin: 0;
+}
+
+#App {
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+#page-wrap {
+  text-align: center;
+  overflow: auto;
+}
+
+.bm-item {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: #d1d1d1;
+  transition: color 0.2s;
+}
+
+.bm-item:hover {
+  color: white;
+}
+
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+.bm-burger-bars {
+  background: #373a47;
+}
+
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.bm-cross {
+  background: #bdc3c7;
+}
+
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+.bm-item-list {
+  color: #b8b7ad;
+}
+
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
 }

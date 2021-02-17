@@ -4,6 +4,7 @@ import { Button, Modal } from 'react-bootstrap';
 import EditedForm from './EditedForm';
 import './EmployeeTable.css';
 import Form from './Form';
+
 function EmployeeTable() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -55,9 +56,10 @@ function EmployeeTable() {
 
     return (
 
-        < div >
+        < div className="employee__table" >
+            {/* SideBar Code Here */}
             <p> <b><u>Brilworks Employee details</u></b></p>
-            <Table striped bordered hover size="sm">
+            <Table className="pt-20" striped bordered hover size="sm">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -99,9 +101,7 @@ function EmployeeTable() {
                     Add Employees
       </Button>
 
-                <div className="wrapper">
-                    <a onClick={() => setShow(true)} href="#"><span>Add Employees</span></a>
-                </div>
+
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>Add Employee Data</Modal.Title>
