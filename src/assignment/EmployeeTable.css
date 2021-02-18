@@ -2,6 +2,12 @@ table {
   overflow-y: scroll;
   height: 100%;
   z-index: 2;
+  padding: 30px;
+}
+.employee__table {
+  height: 100%;
+  padding: 30px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .empty__table {

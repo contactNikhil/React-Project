@@ -12,12 +12,13 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
+
         <SideNavigationBar >
           <div id="page-wrap">
 
           </div>
         </SideNavigationBar>
+        <Navbar />
         <EmployeeTable />
       </div>
     </Router>

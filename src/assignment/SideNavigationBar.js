@@ -1,9 +1,10 @@
 import React from 'react';
 import { slide as Menu } from 'react-burger-menu';
+import './SideNavigationBar.css';
 
 export default props => {
     return (
-        <Menu>
+        <Menu className="sideNavigationBar">
             <a className="menu-item" href="/">
                 Home
       </a>
